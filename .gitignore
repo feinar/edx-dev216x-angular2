@@ -1,6 +1,3 @@
 /assigments/
-/mod1/homework/node_modules/
-/mod2/hands-on-create-modules/node_modules
-/mod2/hands-on-angular-template-syntax/node_modules
-/mod2/hands-on-built-in-angular-directives/node_modules
-/mod2/hands-on-http-client-library/node_modules
+/mod1/*/node_modules/
+/mod2/*/node_modules
