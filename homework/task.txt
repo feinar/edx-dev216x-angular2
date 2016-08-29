@@ -1,0 +1,2 @@
+Set up your invironment:
+> yo edx-angular
