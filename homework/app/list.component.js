@@ -9,23 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var svc_roster_1 = require('./svc.roster');
 var ListComponent = (function () {
-    function ListComponent() {
-        this.students = [
-            { "firstName": "Durham", "lastName": "Lewis", "age": 10, "teacher": "Waters" },
-            { "firstName": "Pierce", "lastName": "Kirkland", "age": 5, "teacher": "Roberson" },
-            { "firstName": "Peters", "lastName": "Juarez", "age": 7, "teacher": "Salas" },
-            { "firstName": "Maryanne", "lastName": "Moses", "age": 10, "teacher": "Ross" },
-            { "firstName": "Hannah", "lastName": "Le", "age": 9, "teacher": "Hays" },
-            { "firstName": "Frazier", "lastName": "Cardenas", "age": 7, "teacher": "Bates" }
-        ];
+    function ListComponent(_rosterService) {
+        this._rosterService = _rosterService;
+        this.students = _rosterService.getRoster();
     }
     ListComponent = __decorate([
         core_1.Component({
             selector: 'list-component',
-            templateUrl: 'app/list.component.html'
+            templateUrl: 'app/list.component.html',
+            providers: [svc_roster_1.RosterService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [svc_roster_1.RosterService])
     ], ListComponent);
     return ListComponent;
 }());
