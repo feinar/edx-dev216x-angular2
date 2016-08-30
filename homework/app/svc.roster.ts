@@ -5,7 +5,8 @@ import {Student} from './student.data';
 export class RosterService {
   public getRoster() : Student[] {
     var students = this.getStudents();
-    return students;
+    var sortedStudents = students.sort(this.sortStudentsAgeDescending);
+    return sortedStudents;
   }
   private getStudents() : Student[] {
     return[
@@ -17,5 +18,8 @@ export class RosterService {
     {"firstName":"Sofia","lastName":"Delaney","age":10,"teacher":"Simpson"},
     {"firstName":"Hopkins","lastName":"Delacruz","age":9,"teacher":"Puckett"}
     ];
+  }
+  private sortStudentsAgeDescending(left : Student, right : Student) : number {
+    return right.age - left.age;
   }
 }

@@ -14,7 +14,8 @@ var RosterService = (function () {
     }
     RosterService.prototype.getRoster = function () {
         var students = this.getStudents();
-        return students;
+        var sortedStudents = students.sort(this.sortStudentsAgeDescending);
+        return sortedStudents;
     };
     RosterService.prototype.getStudents = function () {
         return [
@@ -26,6 +27,9 @@ var RosterService = (function () {
             { "firstName": "Sofia", "lastName": "Delaney", "age": 10, "teacher": "Simpson" },
             { "firstName": "Hopkins", "lastName": "Delacruz", "age": 9, "teacher": "Puckett" }
         ];
+    };
+    RosterService.prototype.sortStudentsAgeDescending = function (left, right) {
+        return right.age - left.age;
     };
     RosterService = __decorate([
         core_1.Injectable(), 
